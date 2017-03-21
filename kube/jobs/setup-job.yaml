@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
         - name: setup
-          image: seei/webapp:6c72aa7
+          image: seei/webapp:LAST_COMMIT
           command: ["/bin/bash", "./setup.production.sh"]
           env:
             - name: PASSENGER_APP_ENV
