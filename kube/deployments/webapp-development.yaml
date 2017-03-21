@@ -10,7 +10,7 @@ spec:
   selector:
     app: webapp
     tier: frontend
-  type: NodePort
+  type: LoadBalancer
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -27,11 +27,11 @@ spec:
         tier: frontend
     spec:
       containers:
-        - image: seei/webapp:86c614c
+        - image: seei/webapp:6c72aa7
           name: webapp
           env:
             - name: PASSENGER_APP_ENV
-              value: development
+              value: production
           ports:
             - containerPort: 80
               name: webapp
