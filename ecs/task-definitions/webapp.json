@@ -1,0 +1,25 @@
+{
+    "family": "webapp",
+    "containerDefinitions": [
+        {
+            "name": "webapp",
+            "image": "seei/webapp:ecs-34507ce",
+            "cpu": 500,
+            "memory": 590,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ], 
+            "essential": true,
+            "environment": [
+                {
+                    "name": "PASSENGER_APP",
+                    "value": "production"
+                }
+            ]
+        }
+    ]
+}
